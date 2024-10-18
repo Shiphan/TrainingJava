@@ -19,17 +19,17 @@ import java.util.Scanner;
 
 public class hw1 {
 	public static void main(String[] args) {
+		// 取得使用者的輸入並存入i
 		Scanner scanner = new Scanner(System.in);
 		int i = 0;
 
-		// 取得使用者的輸入
 		boolean validInput;
 
 		// 直到取得正確的輸入前, 接收輸入
 		do {
+			validInput = true;
 			try {
 				i = scanner.nextInt();
-				validInput = true;
 			} catch (java.util.InputMismatchException e) {
 				// 處理不能作為int的輸入
 				validInput = false;

@@ -50,17 +50,17 @@ public class hw3 {
 		int[] answer = new int[4];
 
 		for (int index = 0; index < answer.length; index++) {
-			boolean exist = false;
+			boolean unused;
 			do {
+				unused = true;
 				answer[index] = random.nextInt(0, 10);
 				for (int indexPre = 0; indexPre < index; indexPre++) {
-					exist = false;
 					if (answer[index] == answer[indexPre]) {
-						exist = true;
+						unused = false;
 						break;
 					}
 				}
-			} while (exist);
+			} while (!unused);
 		}
 
 		return answer;
@@ -69,7 +69,7 @@ public class hw3 {
 	private static int[] getInput(Scanner scanner) {
 		int[] input = new int[4];
 
-		Boolean validInput = false;
+		Boolean validInput;
 		do {
 			validInput = true;
 
@@ -81,8 +81,9 @@ public class hw3 {
 			}
 
 			for (int index = 0; index < 4 && validInput; index++) {
-				input[index] = Character.getNumericValue(inputStr.charAt(index));
-				if (input[index] < 0) {
+				try {
+					input[index] = Integer.parseInt(Character.toString(inputStr.charAt(index)));
+				} catch (java.lang.NumberFormatException e) {
 					validInput = false;
 					System.out.printf("`%c`不是數字\n", inputStr.charAt(index));
 					break;
