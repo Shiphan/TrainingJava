@@ -1,5 +1,13 @@
+
+/*
+ * 作者: 林祐廷 學號: 111216017
+ * 操作說明: TODO:
+ * 自評:
+ * 額外說明:
+ *   有處理錯誤輸入的情況
+ */
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class hw2 {
@@ -32,8 +40,6 @@ public class hw2 {
 			}
 		} while (!validInput);
 		scanner.close();
-
-		System.out.println(inputs.toString());
 
 		boolean[] used = new boolean[inputs.size()];
 		for (int i = 0; i < used.length; i++) {
