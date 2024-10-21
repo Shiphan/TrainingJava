@@ -1,4 +1,5 @@
-import java.util.Arrays;
+// Please open this file with UTF-8 encoding.
+
 import java.util.Random;
 import java.util.Scanner;
 
