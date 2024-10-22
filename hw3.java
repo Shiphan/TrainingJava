@@ -1,6 +1,5 @@
 // Please open this file with UTF-8 encoding.
 
-// TODO: 寫註解
 /*
  * 作者: 林祐廷 學號: 111216017
  * 操作說明:
@@ -28,16 +27,24 @@ import java.util.Scanner;
 
 public class hw3 {
 	private static final int LEN = 4;
+	private static final int CHANCE = 10;
 
 	public static void main(String[] args) {
 		// 產生一個隨機的答案
 		int[] answer = initAnswer();
 
+		System.out.println("幾A幾B:");
+		System.out.printf("1. 答案由%d個不重複的數字組成\n", LEN);
+		System.out.printf("2. 請同樣輸入%d個不重複的數字組成的猜測\n", LEN);
+		System.out.println("3. 猜測的數字包含在答案中算一個'B', 如果位置也猜對就算一個'A'");
+		System.out.printf("4. 總共有%d次機會, 祝你好運!\n", 10);
+		System.out.println();
+
 		Scanner scanner = new Scanner(System.in);
 		boolean win = false;
 
-		// 提供10次嘗試的機會, 如果提前答對就提前結束
-		for (int time = 0; time < 10 && !win; time++) {
+		// 提供CHANCE次嘗試的機會, 如果提前答對就提前結束
+		for (int time = 0; time < CHANCE && !win; time++) {
 			System.out.printf("第%d次嘗試:\n", time + 1);
 
 			// 取得使用者的猜測
@@ -77,7 +84,7 @@ public class hw3 {
 
 		// 如果已經結束了但還沒有猜中, 公布正確答案
 		if (!win) {
-			System.out.print("已經10次了! 正確答案是: ");
+			System.out.printf("已經%d次了! 正確答案是: ", CHANCE);
 			for (int a : answer) {
 				System.out.printf("%d", a);
 			}

@@ -29,6 +29,8 @@ import java.util.Scanner;
 
 public class hw1 {
 	public static void main(String[] args) {
+		System.out.println("請輸入一個大於0的整數, 將計算該數字是否為質數, 以及該數字的質因數分解結果");
+
 		// 取得使用者輸入存入i
 		int i = getInput();
 

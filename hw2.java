@@ -29,6 +29,8 @@ import java.util.Scanner;
 
 public class hw2 {
 	public static void main(String[] args) {
+		System.out.println("請輸入一行以空格相隔的整數數列, 將輸出由大到小排列後的結果");
+
 		// 取得輸入數列
 		ArrayList<Integer> inputs = getInput();
 
@@ -59,13 +61,7 @@ public class hw2 {
 			inputs.clear();
 			validInput = true;
 
-			// 如果得到EOF就當作空的數列
-			try {
-				inputStr = scanner.nextLine();
-			} catch (java.util.NoSuchElementException e) {
-				scanner.close();
-				return inputs;
-			}
+			inputStr = scanner.nextLine();
 
 			// 如果是空白行就繼續等待輸入
 			if (inputStr.isBlank()) {
